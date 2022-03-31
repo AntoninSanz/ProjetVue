@@ -3,6 +3,9 @@
 import Accueil from './components/Accueil.vue'
 import Nav from './components/Nav.vue'
 import { RouterLink, RouterView } from 'vue-router'
+import 'primevue/resources/primevue.min.css'
+import 'primevue/resources/themes/saga-blue/theme.css'    
+import 'primeicons/primeicons.css'                     
 </script>
 
 <template>

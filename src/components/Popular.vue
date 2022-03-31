@@ -1,11 +1,12 @@
 <script>
 import { defineComponent } from "@vue/runtime-core";
 import axios from "axios";
+import DataView from 'primevue/dataview';
 export default defineComponent({
   data: () => {
     return {
       films: null,
-      error: false,
+      error: false
     };
   },
   mounted() {
@@ -25,16 +26,19 @@ export default defineComponent({
 </script>
 
 <template>
+  
+
+   
     <div v-if="films">
       <div v-for="film in films.results" :key="film">
-       {{film.original_title}}
-        <img :src=" 'https://image.tmdb.org/t/p/w200' + film.poster_path">
-
-
-    
+        <div >Titre: <b> {{film.original_title}}</b></div>
+        <div >  {{film.overview}}</div>
+        <img :src=" this.$store.getters.getImgUrl + film.poster_path">
+   </div>
       </div>
-    </div>
     <div v-else>Les films ne sont pas chargés</div>
+     
+ 
 </template>
 
 <style>

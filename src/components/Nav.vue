@@ -1,24 +1,37 @@
-<script setup>
-// /Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import { RouterLink, RouterView } from 'vue-router'
+<script>
+import Menubar from 'primevue/menubar';
+export default {
+    data() {
+        return {
+            items: [
+                {
+                    label:'Accueil',
+                    icon:'pi pi-fw pi-home',
+                },
+                {
+                    label:'Films populaires',
+                    icon:'pi pi-fw pi-star-fill',
+                }
+                    
+            ]
+        }
+    },
+    components: {
+        'Menubar': Menubar
+	}
+}
 </script>
 
 <template>
-  <nav>
-    <routerLink to="/">Accueil </routerLink>
-    <routerLink to="/popular">Films populaires</routerLink>
-    <routerLink to="/best">Films les mieux notés</routerLink>
-  </nav>
-
+    <div>
+        <div class="content-section implementation">
+            <div class="card">
+                <Menubar :model="items">
+                  <template #start>
+					          <img alt="logo" src="../assets/cine.jpg" height="40" class="mr-2">
+				        	</template>
+					      </Menubar>
+            </div>
+        </div>
+    </div>
 </template>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
