@@ -66,6 +66,7 @@ export default defineComponent({
 </script>
 
 <template>
+<div>
   <div v-if="genres">
     <Dropdown v-model="genre" :options="genres.genres" optionLabel="name" />
   </div>
@@ -101,6 +102,7 @@ export default defineComponent({
                 :modelValue="slotProps.data.vote_average"
                 :readonly="true"
                 :cancel="false"
+                :stars="10"
               ></Rating>
               <!-- <i class="pi pi-tag product-category-icon"></i><span class="product-category">{{slotProps.data.category}}</span> -->
             </div>
@@ -162,6 +164,7 @@ export default defineComponent({
           <div >Note moyenne: <b> {{ film.vote_average }}</b></div>   
           <br>
       </div> -->
+  </div>
   </div>
 </template>
 
