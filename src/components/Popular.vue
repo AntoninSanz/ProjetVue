@@ -31,7 +31,7 @@ export default defineComponent({
   <div v-if="films">
     <div v-for="film in films.results" :key="film">
       <div>
-        Titre: <b> {{ film.original_title }}</b>
+        <router-link :to="'/film/' + film.id">Titre: <b> {{ film.original_title }}</b></router-link>
       </div>
       <div>{{ film.overview }}</div>
       <img :src="this.$store.getters.getImgUrlBase + film.poster_path" />
