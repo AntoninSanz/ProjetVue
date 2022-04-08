@@ -9,9 +9,10 @@ import 'primeicons/primeicons.css'
 </script>
 
 <template>
-  <Nav></Nav>
-  <RouterView/>  
-
+  <div>
+    <Nav></Nav>
+    <RouterView/> 
+  </div> 
 </template>
 
 <style>
