@@ -4,6 +4,8 @@ import Populaire from '../components/Popular.vue'
 import BandeA from '../components/BandeA.vue'
 import Best from '../components/Best.vue'
 import Genre from '../components/Genre.vue'
+import Film from '../components/Film.vue'
+import Erreur from '../components/Erreur.vue'
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
@@ -36,6 +38,17 @@ const router = createRouter({
             path: '/genre',
             name: 'Genre',
             component: Genre
+        },
+        {
+            path: '/film/:id',
+            name: 'Film',
+            component: Film,
+            props: true
+        },
+        {
+            path: '/:catchAll(.*)',
+            name: 'notFound',
+            component: Erreur
         }
     ]
 })
