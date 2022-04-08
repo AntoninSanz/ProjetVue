@@ -5,7 +5,8 @@ export default createStore({
   state () {
     return {
       key: "03368cad0c0c6a178cdf790f63692758",
-      imgUrl: 'https://image.tmdb.org/t/p/w200'
+      imgUrlBase: 'https://image.tmdb.org/t/p/w200',
+      urlYtBase: 'https://www.youtube.com/embed/'
     }
   },
   getters:
@@ -14,9 +15,13 @@ export default createStore({
     {
         return state.key;
     },
-    getImgUrl(state)
+    getUrlYtBase(state)
     {
-        return state.imgUrl;
+        return state.urlYtBase;
+    },
+    getImgUrlBase(state)
+    {
+        return state.imgUrlBase;
     }
   },
 })

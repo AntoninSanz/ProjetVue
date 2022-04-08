@@ -1,20 +1,22 @@
 <script>
 import { defineComponent } from "@vue/runtime-core";
 import axios from "axios";
-import DataView from 'primevue/dataview';
+import DataView from "primevue/dataview";
 export default defineComponent({
   data: () => {
     return {
       films: null,
-      error: false
+      error: false,
     };
   },
   mounted() {
     axios
-.get(
-        "https://api.themoviedb.org/3/movie/popular?api_key="+this.$store.getters.getKey+"&language=fr-FR&page=1"
+      .get(
+        "https://api.themoviedb.org/3/movie/popular?api_key=" +
+          this.$store.getters.getKey +
+          "&language=fr-FR&page=1"
         //"https://api.themoviedb.org/3/movie/popular?api_key=03368cad0c0c6a178cdf790f63692758&language=fr-fr&page=1"
-        )
+      )
       .then((response) => {
         this.films = response.data;
       })
@@ -26,19 +28,16 @@ export default defineComponent({
 </script>
 
 <template>
-  
-
-   
-    <div v-if="films">
-      <div v-for="film in films.results" :key="film">
-        <div >Titre: <b> {{film.original_title}}</b></div>
-        <div >  {{film.overview}}</div>
-        <img :src=" this.$store.getters.getImgUrl + film.poster_path">
-   </div>
+  <div v-if="films">
+    <div v-for="film in films.results" :key="film">
+      <div>
+        Titre: <b> {{ film.original_title }}</b>
       </div>
-    <div v-else>Les films ne sont pas chargés</div>
-     
- 
+      <div>{{ film.overview }}</div>
+      <img :src="this.$store.getters.getImgUrlBase + film.poster_path" />
+    </div>
+  </div>
+  <div v-else>Les films ne sont pas chargés</div>
 </template>
 
 <style>
