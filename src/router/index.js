@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Accueil from '../components/Accueil.vue'
-import Populaire from '../components/Popular.vue'
 import BandeA from '../components/BandeA.vue'
 import Best from '../components/Best.vue'
 import Genre from '../components/Genre.vue'
 import Film from '../components/Film.vue'
 import Erreur from '../components/Erreur.vue'
+import Parametres from '../components/Parametres.vue'
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
@@ -17,7 +17,7 @@ const router = createRouter({
         {
             path: '/popular',
             name: 'Populaire',
-            component: Populaire
+            component: Best
         },
         {
             path: '/best',
@@ -49,6 +49,11 @@ const router = createRouter({
             path: '/:catchAll(.*)',
             name: 'notFound',
             component: Erreur
+        },
+        {
+            path: '/parametres',
+            name: 'Paramètres',
+            component: Parametres
         }
     ]
 })

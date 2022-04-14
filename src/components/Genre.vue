@@ -14,7 +14,7 @@ export default defineComponent({
       genre: null,
       films: null,
       error: false,
-      layout: "grid",
+      layout: "list",
     };
   },
   components: {
@@ -34,7 +34,9 @@ export default defineComponent({
       )
       .then((response) => {
         this.genres = response.data;
-        console.log(this.genres);
+        //affichage du premier genre par défaut
+        this.genre = this.genres.genres[0];
+        this.goToGenre(this.genres.genres[0].id);
       })
       .catch(() => {
         this.error = true;
@@ -93,7 +95,7 @@ export default defineComponent({
             />
             <div class="product-list-detail">
               <div class="product-name">
-                {{ slotProps.data.original_title }}
+                 <router-link :to="'/film/' + slotProps.data.id"> <b> {{ slotProps.data.original_title }}</b></router-link>
               </div>
               <div class="product-description">
                 {{ slotProps.data.overview }}
@@ -133,7 +135,7 @@ export default defineComponent({
             </div>
             <div class="product-grid-item-content">
               <div class="product-name">
-                {{ slotProps.data.original_title }}
+                <router-link :to="'/film/' + slotProps.data.id"> <b> {{ slotProps.data.original_title }}</b></router-link>
               </div>
               <div class="product-description">
                 {{ slotProps.data.overview }}

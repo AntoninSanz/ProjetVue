@@ -24,4 +24,19 @@ export default createStore({
         return state.imgUrlBase;
     }
   },
+  mutations:
+  {
+    initKey(key, state)
+    {
+      state.key = key;
+    },
+    initUrlYtBase(url, state)
+    {
+      state.urlYtBase = url;
+    },
+    initImgUrlBase(url, state)
+    {
+      state.imgUrlBase = url;
+    }
+  }
 })
