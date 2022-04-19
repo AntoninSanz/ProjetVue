@@ -195,6 +195,9 @@ export default defineComponent({
 <div v-if="baVote === true">
     vous aimez ce film
   </div>
+  <div v-if="baVote === false">
+    vous n'aimez pas ce film
+  </div>
     <div>
       <DataView :value="films.results" :layout="layout">
       <template #header>

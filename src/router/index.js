@@ -51,6 +51,7 @@ const router = createRouter({
             component: Erreur
         },
         {
+            // n'apparait pas dans la nav bar, en cours de dev
             path: '/parametres',
             name: 'Paramètres',
             component: Parametres

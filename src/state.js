@@ -1,42 +1,34 @@
-import { createStore } from 'vuex'
+import { createStore } from "vuex";
 
 // Create a new store instance.
 export default createStore({
-  state () {
+  state() {
     return {
       key: "03368cad0c0c6a178cdf790f63692758",
-      imgUrlBase: 'https://image.tmdb.org/t/p/w200',
-      urlYtBase: 'https://www.youtube.com/embed/'
-    }
+      imgUrlBase: "https://image.tmdb.org/t/p/w200",
+      urlYtBase: "https://www.youtube.com/embed/",
+    };
   },
-  getters:
-  {
-    getKey(state)
-    {
-        return state.key;
+  getters: {
+    getKey(state) {
+      return state.key;
     },
-    getUrlYtBase(state)
-    {
-        return state.urlYtBase;
+    getUrlYtBase(state) {
+      return state.urlYtBase;
     },
-    getImgUrlBase(state)
-    {
-        return state.imgUrlBase;
-    }
+    getImgUrlBase(state) {
+      return state.imgUrlBase;
+    },
   },
-  mutations:
-  {
-    initKey(key, state)
-    {
+  mutations: {
+    initKey(state, key) {
       state.key = key;
     },
-    initUrlYtBase(url, state)
-    {
+    initUrlYtBase(state, url) {
       state.urlYtBase = url;
     },
-    initImgUrlBase(url, state)
-    {
+    initImgUrlBase(state, url) {
       state.imgUrlBase = url;
-    }
-  }
-})
+    },
+  },
+});

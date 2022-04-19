@@ -7,7 +7,7 @@ const count = ref(0);
 </script>
 
 <template>
-  <h1>HallaCiné ou HalouilleCiné !</h1>
+  <h1> HalouilleCiné !</h1>
   <p> Bienvenue sur le site qui souhaite concurrencer Allociné ! </p>
    <img alt="lumiere" src="../assets/lumiere.jpeg" height="300"   />
 </template>
